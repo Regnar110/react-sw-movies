@@ -1,0 +1,45 @@
+.landing-logo-container {
+    -webkit-box-shadow: -1px 13px 22px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 13px 22px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 13px 22px 0px rgba(0,0,0,0.75);
+    background-color: rgba(0, 0, 0, 0.712);
+    padding:10px;
+    overflow: hidden;
+
+    .landing-logo {
+        position: relative;
+        top: 150px; // logo ukryte
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 2s ease;
+    }
+
+    .under-logo {
+        position: relative;
+        top: 100px; // under logo ukryte
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 3s ease-in-out;
+
+        #under-logo-svg {
+            margin: 0px;
+            padding-top: 5px;
+            width: 500px;
+            height: 70px;
+        }
+
+        @media screen and (max-width: 600px) {
+            #under-logo-svg {
+                width: 300px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            #under-logo-svg {
+                width: 200px;
+            }
+        }
+    }
+}
