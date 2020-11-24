@@ -1,3 +1,4 @@
 [1122/164506.240:ERROR:directory_reader_win.cc(43)] FindFirstFile: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
 [1122/172129.067:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Mateusz\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\49838124-a286-48ae-8c75-314a2939f805: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
 [1123/135451.563:ERROR:directory_reader_win.cc(43)] FindFirstFile: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
+[1124/221138.545:ERROR:directory_reader_win.cc(43)] FindFirstFile: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)

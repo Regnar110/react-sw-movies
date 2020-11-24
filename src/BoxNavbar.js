@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'; 
 import './boxnavbar.scss';
 
-const BoxNavbar = ({menuFunction, placeholder}) => {
+const BoxNavbar = ({menuFunction, placeholder, placeholderFunction}) => {
     return(
         <Fragment>
         <div className="nav-container">
@@ -15,10 +15,11 @@ const BoxNavbar = ({menuFunction, placeholder}) => {
             </div>
         </div>
         <nav className='nav-menu'>
-                <div className='menu-item' id='movies'>Movies</div>
-                <div className='menu-item' id='characters'>Characters</div>
-                <div className='menu-item' id='species'>Species</div>
-                <div className='menu-item' id='actors'>Actors</div>
+                <div className='menu-item' id='home' onClick={placeholderFunction}>Home</div>
+                <div className='menu-item' id='movies' onClick={placeholderFunction}>Movies</div>
+                <div className='menu-item' id='characters' onClick={placeholderFunction}>Characters</div>
+                <div className='menu-item' id='species' onClick={placeholderFunction}>Species</div>
+                <div className='menu-item' id='actors' onClick={placeholderFunction}>Actors</div>
             </nav>
     </Fragment>
     )

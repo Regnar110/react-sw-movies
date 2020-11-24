@@ -7,9 +7,38 @@ class ContentBox extends Component {
         super();
         this.state = {
             menuOn: false,
-            searchFieldPlaceholder: 'placeholder state'
+            searchfieldOn: false,
+            searchFieldPlaceholder: '', // zsłuży do zmiasy placeholdera w polu wyszukiwania zależnie od tego w jakiej sekcji aplikacji z najduje się użytkownik
+            userSitePos: '', //wskazuje na pozycje użytkownika w contentBoxe. Czyli na to czy przegląda filmy, postacie lub coś innego
         }
     }
+
+    searchFieldFunctions = (event) => { // zmieniane są 3 stany czyli searchFieldPlaceholder,  userSitePos i searchFieldOn. Ten ostatni w zalezności od tego jaki element menu jest kliknięty. Nadaje funkcjonalośc do searchFielda i ogólnie menu
+        const searchContainer = document.querySelector('.boxSearch-container');
+        this.setState({userSitePos: event.target.id}, () => console.log(this.state.userSitePos))
+        this.setState({searchFieldPlaceholder: 'search for ' + event.target.id})
+        if(!this.state.searchfieldOn){
+                this.setState({searchfieldOn: true}, ()=>{
+                    searchContainer.style.width = '175px';
+                    searchContainer.style.left = '60px';
+                    setTimeout(() => {
+                        searchContainer.firstChild.style.left = '0px';
+                        searchContainer.firstChild.style.width = '165px';
+                    }, 300)
+                })
+        }
+        if(event.target.id === 'home') {
+            this.setState({searchfieldOn: false}, () => {
+                setTimeout(() => {
+                    searchContainer.style.width = '0px';
+                    searchContainer.style.left = '-60px';
+                }, 300)
+                searchContainer.firstChild.style.left = '-200px';
+                searchContainer.firstChild.style.width = '0px';
+            })
+        }
+    } 
+
 
     toggleMenu = () => {
         const {menuOn} = this.state;
@@ -41,7 +70,7 @@ class ContentBox extends Component {
         const {searchFieldPlaceholder} = this.state;
         return(
             <div className='content-box'>
-                <BoxNavbar menuFunction={this.toggleMenu} placeholder={searchFieldPlaceholder}/>
+                <BoxNavbar menuFunction={this.toggleMenu} placeholder={searchFieldPlaceholder} placeholderFunction={this.searchFieldFunctions}/>
             </div>
         )
     }
