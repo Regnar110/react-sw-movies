@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap'); // section headers font
+
 .content-box {
     background-color: rgba(255, 255, 255, .2);
     border: 1px solid black;
@@ -8,6 +10,25 @@
     font-size: 30px;
     overflow-x: hidden;
     overflow-y: scroll;
+
+    .section-container { // kontener dla każdej sekcji zawartej w content boxie
+        position: relative;
+        top: 65px;
+        margin: 20px;
+        z-index: 0;
+
+        .section-header {
+            font-size: 60px;
+            text-align: center;
+            letter-spacing: 7px;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: rgb(255, 238, 0);
+            -webkit-text-fill-color: black;
+            font-family: 'Coda Caption', sans-serif;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+    }
 }
 
 .content-box::-webkit-scrollbar-track {

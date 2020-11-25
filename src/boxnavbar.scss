@@ -17,6 +17,7 @@ $w: 300px;
   position: fixed;
   background-color: rgba(0, 0, 0, .8);
   display: flex;
+  z-index: 1;
 }
 
 .burger {
@@ -182,6 +183,7 @@ $w: 300px;
 }
 
 .nav-menu {
+    z-index: 2; // żeby menu było zawsze nad resztą zawartości 
     position: fixed;
     left: -350px;
     top:215px;
@@ -207,6 +209,12 @@ $w: 300px;
         cursor: pointer;
         transition: 0.3s all;
         text-shadow: 8px 7px 10px #000000;
+    }
+
+    #start {
+      background: linear-gradient(to right,  rgb(183, 0, 255) 50%, transparent 50%);
+      background-size: 200% 100%;
+      background-position:right;
     }
 
     #movies {
@@ -235,6 +243,13 @@ $w: 300px;
 
     .menu-item:hover {
         color: black;
+    }
+
+    #start:hover {
+      background-position: left;
+      -webkit-box-shadow: -1px 3px 30px 0px rgb(183, 0, 255);
+      -moz-box-shadow: -1px 3px 30px 0px rgb(183, 0, 255);
+      box-shadow: -1px 3px 30px 0px rgb(183, 0, 255);
     }
 
     #movies:hover {

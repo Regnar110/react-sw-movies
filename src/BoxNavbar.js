@@ -15,7 +15,7 @@ const BoxNavbar = ({menuFunction, placeholder, placeholderFunction}) => {
             </div>
         </div>
         <nav className='nav-menu'>
-                <div className='menu-item' id='home' onClick={placeholderFunction}>Home</div>
+                <div className='menu-item' id='start' onClick={placeholderFunction}>Start</div>
                 <div className='menu-item' id='movies' onClick={placeholderFunction}>Movies</div>
                 <div className='menu-item' id='characters' onClick={placeholderFunction}>Characters</div>
                 <div className='menu-item' id='species' onClick={placeholderFunction}>Species</div>

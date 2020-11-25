@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import './contentbox.scss'
 import BoxNavbar from './BoxNavbar';
+import Home from './Home';
 
 class ContentBox extends Component {
     constructor() {
@@ -17,7 +18,7 @@ class ContentBox extends Component {
         const searchContainer = document.querySelector('.boxSearch-container');
         this.setState({userSitePos: event.target.id}, () => console.log(this.state.userSitePos))
         this.setState({searchFieldPlaceholder: 'search for ' + event.target.id})
-        if(!this.state.searchfieldOn){
+        if(!this.state.searchfieldOn && event.target.id !== 'start'){
                 this.setState({searchfieldOn: true}, ()=>{
                     searchContainer.style.width = '175px';
                     searchContainer.style.left = '60px';
@@ -27,7 +28,7 @@ class ContentBox extends Component {
                     }, 300)
                 })
         }
-        if(event.target.id === 'home') {
+        if(event.target.id === 'start') {
             this.setState({searchfieldOn: false}, () => {
                 setTimeout(() => {
                     searchContainer.style.width = '0px';
@@ -38,7 +39,6 @@ class ContentBox extends Component {
             })
         }
     } 
-
 
     toggleMenu = () => {
         const {menuOn} = this.state;
@@ -71,9 +71,12 @@ class ContentBox extends Component {
         return(
             <div className='content-box'>
                 <BoxNavbar menuFunction={this.toggleMenu} placeholder={searchFieldPlaceholder} placeholderFunction={this.searchFieldFunctions}/>
+                <Home />
             </div>
         )
     }
 }
 
 export default ContentBox;
+
+
