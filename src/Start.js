@@ -1,6 +1,7 @@
 import React from 'react';
-import './home.scss';
+import './start.scss';
 import fightimg from './assets/sw-fight.png';
+
 const Home = () => {
     return(
         <div className='section-container'>
@@ -11,7 +12,7 @@ const Home = () => {
                 </div>
                 <div className='home-image'>
                     <div className='home-image-border'>
-                        <img src={fightimg} />
+                        <img src={fightimg} alt='vader'/>
                     </div>
                 </div>
             </div>

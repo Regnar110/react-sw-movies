@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import { Component, StrictMode } from 'react';
 import './app.scss';
 import Logo from './Logo';
 import ContentBox from './ContentBox';
@@ -21,7 +21,7 @@ class App extends Component {
       }, 700)
       setTimeout(()=>{
         underLogo.style.top= '0px';
-      }, 1000)
+      }, 500)
     } else {
       console.log('nic')
     }
@@ -33,10 +33,10 @@ class App extends Component {
 
   render() {
     return(
-      <Fragment>
+      <StrictMode>
         <Logo />
         <ContentBox />
-      </Fragment>
+      </StrictMode>
     )
   }
 }

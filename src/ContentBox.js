@@ -1,22 +1,52 @@
-import {Component} from 'react';
+import {Component, Fragment} from 'react';
 import './contentbox.scss'
 import BoxNavbar from './BoxNavbar';
-import Home from './Home';
+import Start from './Start';
+import Movies from './Movies'
+import Characters from './Characters'
+import Species from './Species'
+import Actors from './Actors'
 
 class ContentBox extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             menuOn: false,
             searchfieldOn: false,
             searchFieldPlaceholder: '', // zsłuży do zmiasy placeholdera w polu wyszukiwania zależnie od tego w jakiej sekcji aplikacji z najduje się użytkownik
-            userSitePos: '', //wskazuje na pozycje użytkownika w contentBoxe. Czyli na to czy przegląda filmy, postacie lub coś innego
+            userSitePos: 'start', //wskazuje na pozycje użytkownika w contentBoxe. Czyli na to czy przegląda filmy, postacie lub coś innego
+        }
+    }
+
+    deploySection = () => { // funkcja która na podstawie wyboru z menu( który zmienia stan userSitePos na nazwę sekcji, w której znajduje się użytkownik) wyświetla zawartość zwracając komponent odpowiadający wyborom użytkownika. FUNKCJA WYWOŁYWANA PRZEZ searchFIELD FUNCTION
+        let {userSitePos} = this.state
+        console.log("jestem tutaj")
+        if(userSitePos === 'start'){
+            return(
+                <Start />
+            )
+        } else if(userSitePos === 'movies') {
+            return(
+                <Movies />
+            )
+        } else if(userSitePos === 'characters'){
+            return(
+                <Characters />
+            )
+        } else if(userSitePos === 'species') {
+            return(
+                <Species />
+            )
+        } else if(userSitePos === 'actors') {
+            return(
+                <Actors />
+            )
         }
     }
 
     searchFieldFunctions = (event) => { // zmieniane są 3 stany czyli searchFieldPlaceholder,  userSitePos i searchFieldOn. Ten ostatni w zalezności od tego jaki element menu jest kliknięty. Nadaje funkcjonalośc do searchFielda i ogólnie menu
         const searchContainer = document.querySelector('.boxSearch-container');
-        this.setState({userSitePos: event.target.id}, () => console.log(this.state.userSitePos))
+        this.setState({userSitePos: event.target.id})
         this.setState({searchFieldPlaceholder: 'search for ' + event.target.id})
         if(!this.state.searchfieldOn && event.target.id !== 'start'){
                 this.setState({searchfieldOn: true}, ()=>{
@@ -27,8 +57,7 @@ class ContentBox extends Component {
                         searchContainer.firstChild.style.width = '165px';
                     }, 300)
                 })
-        }
-        if(event.target.id === 'start') {
+        } else if(event.target.id === 'start') {
             this.setState({searchfieldOn: false}, () => {
                 setTimeout(() => {
                     searchContainer.style.width = '0px';
@@ -38,6 +67,7 @@ class ContentBox extends Component {
                 searchContainer.firstChild.style.width = '0px';
             })
         }
+
     } 
 
     toggleMenu = () => {
@@ -69,10 +99,12 @@ class ContentBox extends Component {
     render() {
         const {searchFieldPlaceholder} = this.state;
         return(
+            <Fragment>
+            <BoxNavbar menuFunction={this.toggleMenu} placeholder={searchFieldPlaceholder} placeholderFunction={this.searchFieldFunctions}/>
             <div className='content-box'>
-                <BoxNavbar menuFunction={this.toggleMenu} placeholder={searchFieldPlaceholder} placeholderFunction={this.searchFieldFunctions}/>
-                <Home />
+            {this.deploySection()}
             </div>
+            </Fragment>
         )
     }
 }

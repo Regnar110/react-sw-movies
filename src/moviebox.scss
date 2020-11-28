@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap'); // pin mark font
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap'); //pin button font
+
+.movie-box {
+    overflow: hidden;
+    width: 350px;
+    height: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    .movie-image {
+        overflow: hidden;
+        height: 80%;
+
+        .movie-details-pin {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgb(0, 195, 255);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            width: 170px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.842);
+            left: -128px;
+            top: 40%;
+            transition: 0.5s all;
+
+            .pin-button {
+                cursor: pointer;
+                text-align: center;
+                padding-left: 5px;
+                font-family: 'Goldman', cursive;
+                font-size: 30px;
+                line-height: 19px;
+
+            }
+
+            .pin-mark {
+                font-family: 'Coda Caption', sans-serif;
+                color: white;
+
+                img{
+                    cursor: pointer;
+                    width: 40px;
+                }
+            }
+        }
+
+        .movie-details-pin:hover { // potem trzeba zrobić to na kliknięcie
+            transform: translateX(115px);
+            background-color: black;
+            color: white;
+            border: 1px solid yellow;
+        }
+    }
+
+    .box-footer {
+        background-color: rgba(0, 0, 0, 0.767) ;
+        height: 20%;
+        color: white;
+        font-family: 'Goldman', cursive;
+        font-size: 22px;
+        letter-spacing: 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
