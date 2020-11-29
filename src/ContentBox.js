@@ -14,32 +14,36 @@ class ContentBox extends Component {
             menuOn: false,
             searchfieldOn: false,
             searchFieldPlaceholder: '', // zsłuży do zmiasy placeholdera w polu wyszukiwania zależnie od tego w jakiej sekcji aplikacji z najduje się użytkownik
+            searchFieldContent: '',
             userSitePos: 'start', //wskazuje na pozycje użytkownika w contentBoxe. Czyli na to czy przegląda filmy, postacie lub coś innego
         }
     }
 
+    changeSearchInput = (e) => {
+        this.setState({searchFieldContent: e.target.value})
+    }
+
     deploySection = () => { // funkcja która na podstawie wyboru z menu( który zmienia stan userSitePos na nazwę sekcji, w której znajduje się użytkownik) wyświetla zawartość zwracając komponent odpowiadający wyborom użytkownika. FUNKCJA WYWOŁYWANA PRZEZ searchFIELD FUNCTION
-        let {userSitePos} = this.state
-        console.log("jestem tutaj")
+        let {userSitePos, searchFieldContent} = this.state
         if(userSitePos === 'start'){
             return(
                 <Start />
             )
         } else if(userSitePos === 'movies') {
             return(
-                <Movies />
+                <Movies searchField={searchFieldContent}/>
             )
         } else if(userSitePos === 'characters'){
             return(
-                <Characters />
+                <Characters searchField={searchFieldContent}/>
             )
         } else if(userSitePos === 'species') {
             return(
-                <Species />
+                <Species searchField={searchFieldContent}/>
             )
         } else if(userSitePos === 'actors') {
             return(
-                <Actors />
+                <Actors searchField={searchFieldContent}/>
             )
         }
     }
@@ -100,7 +104,7 @@ class ContentBox extends Component {
         const {searchFieldPlaceholder} = this.state;
         return(
             <Fragment>
-            <BoxNavbar menuFunction={this.toggleMenu} placeholder={searchFieldPlaceholder} placeholderFunction={this.searchFieldFunctions}/>
+            <BoxNavbar menuFunction={this.toggleMenu} placeholder={searchFieldPlaceholder} placeholderFunction={this.searchFieldFunctions} searchContent={this.changeSearchInput}/>
             <div className='content-box'>
             {this.deploySection()}
             </div>

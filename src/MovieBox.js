@@ -3,8 +3,7 @@ import './moviebox.scss';
 import movieboxhover from './assets/movieboxhover.svg'
 import sith from './assets/movie-images/sithrevenge.jpg';
 
-const MovieBox = () => {
-    
+const MovieBox = ({title, func}) => {
     return (
         <div className='movie-box' style={{
             backgroundImage: `url(${sith})`,
@@ -20,7 +19,7 @@ const MovieBox = () => {
             </div>
             <div className='box-footer'>
                 <div className='upper'>Star Wars</div>
-                <div className='bottom'>Revenge of the Sith</div>
+                <div className='bottom'>{title}</div>
             </div>
         </div>
     )
