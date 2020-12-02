@@ -17,7 +17,7 @@ $w: 300px;
   position: fixed;
   background-color: rgba(0, 0, 0, .8);
   display: flex;
-  z-index: 1;
+  z-index: 1; // było na 1 - zmienione w trakcie pracy nad char-modalem
 }
 
 .burger {
@@ -162,18 +162,19 @@ $w: 300px;
     #boxSearch {
       position: relative;
       left: -250px;
-      color: white;
+      color: black;
       height: 40px;
       width: 0;
       text-align: center;
+      font-weight: 500;
       border-radius: 10px;
       background-color: rgb(255, 255, 255);
       transition: 1s all;
       outline: none;
     } 
     #boxSearch:focus {
-
       outline: none;
+      color: white;
       background-color: transparent;
       border: 1px solid white;
       -webkit-box-shadow: inset 0px 0px 18px 3px rgb(0, 85, 212);
@@ -183,7 +184,7 @@ $w: 300px;
 }
 
 .nav-menu {
-    z-index: 2; // żeby menu było zawsze nad resztą zawartości 
+    z-index: 2; // żeby menu było zawsze nad resztą zawartości  - zmienione na 0 z 2 na czas pracy nad char modal
     position: fixed;
     left: -350px;
     top:215px;

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+.char-container {
+    width: 300px;
+    height: 500px;
+    font-family: 'Goldman', cursive;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: black;
+    margin: 20px;
+
+    .char-img {
+        height: 80%;
+
+        .details-pin {
+            position: relative;
+            width: 170px;
+            height: 70px;
+            border: 1px solid rgb(0, 195, 255);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            top: 45%;
+            left: -120px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            transition: 0.5s all;
+            background-color: rgba(0, 0, 0, 0.63);
+            color: black;
+
+            .pin-button {
+                font-size: 30px;
+                cursor: pointer;
+            }
+
+            img {
+                width: 40px;
+            }
+        }
+
+        .details-pin:hover {
+            left: -2px;
+            background-color: black;
+            color: white;
+            border: 1px solid yellow;
+        }
+    }
+
+    .char-name {
+        height: 20%;
+        background-color: rgba(0, 0, 0, 0.74);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
