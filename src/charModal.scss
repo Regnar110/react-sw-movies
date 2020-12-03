@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap');
-.modal-active {
-    display: block;
-}
+
 
 .char-modal-container {
     display: none;
@@ -81,6 +79,9 @@
 
                     .multi-data {
                         padding: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        
                     }
                 }
             }
@@ -144,3 +145,6 @@
     }
 }
 
+.modal-active {
+    display: block;
+}

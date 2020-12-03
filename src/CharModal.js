@@ -2,12 +2,13 @@ import React from 'react';
 import './charModal.scss'
 import sith from './assets/movie-images/sithrevenge.jpg';
 
-const CharModal = () => {
+const CharModal = ({show, hide, image, height, mass, gender, homeworld, wiki, born, bornLocation, died, diedLocation, species, hairColor, eyeColor, skinColor, cybernetics, affiliations, masters, apprentices, formerAffiliations}) => {
+    const showHideClassName = show ? "char-modal-container modal-active" : "char-modal-container";
     return (
-        <div className='char-modal-container'>
+        <div className={showHideClassName}>
             <div className='char-modal-content'>
                 <div className='img' style={{
-                    backgroundImage: `url(${sith})`,
+                    backgroundImage: `url(${image})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat'
@@ -18,55 +19,55 @@ const CharModal = () => {
                     <div className='details-one'>
                         <div className='dt-one char-height'>
                             <div className='char-detail-header'>Height:</div>
-                            <div className='char-data'>1.72</div>
+                            <div className='char-data'>{height}</div>
                         </div>
                         <div className='dt-one  char-mass'>
                             <div className='char-detail-header'>Mass:</div>
-                            <div className='char-data'>73</div>
+                            <div className='char-data'>{mass}</div>
                         </div>
                         <div className='dt-one  char-gender'>
                             <div className='char-detail-header'>Gender:</div>
-                            <div className='char-data'>male</div>
+                            <div className='char-data'>{gender}</div>
                         </div>
                         <div className='dt-one  char-homeworld'>
                             <div className='char-detail-header'>Homeworld:</div>
-                            <div className='char-data'>tatooine</div>
+                            <div className='char-data'>{homeworld}</div>
                         </div>
                         <div className='dt-one  char-born'>
                             <div className='char-detail-header'>Birth:</div>
-                            <div className='char-data'>-19</div>
+                            <div className='char-data'>{born}</div>
                         </div>
                         <div className='dt-one  char-bornLocation'>
                             <div className='char-detail-header'>Birth location:</div>
-                            <div className='char-data'>polis massa</div>
+                            <div className='char-data'>{bornLocation}</div>
                         </div>
                         <div className='dt-one  char-die'>
                             <div className='char-detail-header'>Died:</div>
-                            <div className='char-data'>34</div>
+                            <div className='char-data'>{died}</div>
                         </div>
                         <div className='dt-one  char-dieLocation'>
                             <div className='char-detail-header'>Died location:</div>
-                            <div className='char-data'>ahch-to</div>
+                            <div className='char-data'>{diedLocation}</div>
                         </div>
                         <div className='dt-one  char-species'>
                             <div className='char-detail-header'>Species:</div>
-                            <div className='char-data'>human</div>
+                            <div className='char-data'>{species}</div>
                         </div>
                         <div className='dt-one  char-hairColor'>
                             <div className='char-detail-header'>Hair color:</div>
-                            <div className='char-data'>blond</div>
+                            <div className='char-data'>{hairColor}</div>
                         </div>
                         <div className='dt-one  char-eyeColor'>
                             <div className='char-detail-header'>Eye color:</div>
-                            <div className='char-data'>blue</div>
+                            <div className='char-data'>{eyeColor}</div>
                         </div>
                         <div className='dt-one char-skinColor'>
                             <div className='char-detail-header'>Skin color:</div>
-                            <div className='char-data'>light</div>
+                            <div className='char-data'>{skinColor}</div>
                         </div>
                         <div className='dt-one char-cybernetics'>
                             <div className='char-detail-header'>Cybernetics:</div>
-                            <div className='char-data'>Prosthetic right hand</div>
+                            <div className='char-data'>{cybernetics}</div>
                         </div>
                     </div>
 
@@ -74,19 +75,19 @@ const CharModal = () => {
                         <div className='dt-two char-affiliations'>
                             <div className='char-detail-header'>Affiliations:</div>  
                             <div className='char-multi-data'>
-                                <div className='multi-data'>Alliance to Restore the Republic</div>
-                                <div className='multi-data'>Red Squadron</div>
-                                <div className='multi-data'>Red Squadron</div>
-                                <div className='multi-data'>Red Squadron</div>
-                                <div className='multi-data'>Red Squadron</div>
+                                {affiliations.map(element => {
+                                    return (
+                                        <div className='multi-data'>{element}</div>
+                                    )                                    
+                                })
+                                }
                             </div>
                         </div>
                         <div className='dt-two char-masters'>
                             <div className='char-detail-header'>Masters:</div>
                             <div className='char-multi-data'>
-                                <div className='multi-data'>Obi</div>
-                                <div className='multi-data'>Obi</div>
-                                <div className='multi-data'>Obi</div>
+                                {
+                                }
                             </div>
                         </div>
                         <div className='dt-two char-apprentices'>
@@ -107,7 +108,7 @@ const CharModal = () => {
                     </div>
                     <div className='buttons'>
                         <div className='close-modal'>
-                            <button className='modal-btn'>close</button>
+                            <button className='modal-btn' onClick={hide}>close</button>
                         </div>
                         <div className='wiki-button'>
                             <button className='modal-btn'>More</button>

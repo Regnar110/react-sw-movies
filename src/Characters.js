@@ -9,19 +9,24 @@ class Characters extends Component {
         super();
         this.state = {
             charactersArr: [],
-            characterSearchValue: '',
-            modal: false
+            characterSearchValue: ''
         }
     }
 
     getData = async () =>{ // funkcja ściągająca dane z API (swapi) i umieszczająca je w stanie charactersArr
         let chars = this.state.charactersArr;
+        let masters = []
         try{
             for(let i=1;i<=87;i++) {
                 if(i !== 17) { // pozycja 17 w api nie istnieje dlatego jest tutaj if aby pominąć tą pozycję
                     let response =  await fetch('https://akabab.github.io/starwars-api/api/id/'+i+'.json')
                     let data = await response.json();
-                    chars.push(data);
+                    if('masters' in data) {
+                        chars.push(data);
+                    } else {
+                        console.log('pushuje')
+                        data.push(masters)
+                    }
                 }
             }
         } catch {
@@ -44,18 +49,6 @@ class Characters extends Component {
         this.getData();
     }
 
-    turnModal = () => {
-        const {modal} = this.state;
-        const modalContainer = document.querySelector('.char-modal-container');
-        if(!modal){
-          this.setState({modal: true})  
-          modalContainer.classList.add('modal-active');
-        } else {
-            this.setState({modal:false})
-            modalContainer.classList.remove('modal-active');
-        }
-    }
-
     render() {
         const {charactersArr, characterSearchValue, modal} = this.state;
         const filteredCharacters = charactersArr.filter(character =>{
@@ -69,10 +62,10 @@ class Characters extends Component {
                 <h1 className='section-header'> Characters </h1>
                 <div className='movies-wrapper'>
                     {
-                        filteredCharacters.map((char,i) => {
+                        filteredCharacters.map( ({id, ...otherProps}) => {
                             return(
-                                <Char key={char.id} name={char.name} image={char.image} turnModal={this.turnModal} modalStatus={modal}>
-                                    <CharModal key={char.id} height={char.height} mass={char.mass} gender={char.gender} homeworld={char.homeworld} image={char.image} born={char.born} bornLocation={char.bornLocation} died={char.died} diedLocation={char.diedLocation} species={char.species} hairColor={char.hairColor} eyeColor={char.eyeColor} skin={char.skinColor} cybernetics={char.cybernetics} affiliations={char.affiliations} masters={char.masters} apprentices={char.apprentices} formerAffiliations={char.formerAffiliations}/>
+                                <Char key={id} {...otherProps}>
+                                    <CharModal />
                                 </Char>
                             )
                         })
