@@ -1,6 +1,5 @@
 import React from 'react';
 import './charModal.scss'
-import sith from './assets/movie-images/sithrevenge.jpg';
 
 const CharModal = ({show, hide, image, height, mass, gender, homeworld, wiki, born, bornLocation, died, diedLocation, species, hairColor, eyeColor, skinColor, cybernetics, affiliations, masters, apprentices, formerAffiliations}) => {
     const showHideClassName = show ? "char-modal-container modal-active" : "char-modal-container";
@@ -75,7 +74,8 @@ const CharModal = ({show, hide, image, height, mass, gender, homeworld, wiki, bo
                         <div className='dt-two char-affiliations'>
                             <div className='char-detail-header'>Affiliations:</div>  
                             <div className='char-multi-data'>
-                                {affiliations.map(element => {
+                                {
+                                    affiliations.map(element => {
                                     return (
                                         <div className='multi-data'>{element}</div>
                                     )                                    
@@ -86,23 +86,37 @@ const CharModal = ({show, hide, image, height, mass, gender, homeworld, wiki, bo
                         <div className='dt-two char-masters'>
                             <div className='char-detail-header'>Masters:</div>
                             <div className='char-multi-data'>
-                                {
+                                {   
+                                    masters.map(element => {
+                                    return (
+                                        <div className='multi-data'>{element}</div>
+                                    )                                    
+                                })
                                 }
                             </div>
                         </div>
                         <div className='dt-two char-apprentices'>
                             <div className='char-detail-header'>Apprentices:</div>
                             <div className='char-multi-data'>
-                                <div className='multi-data'>Leila</div>
-                                <div className='multi-data'>Leila</div>
-                                <div className='multi-data'>Leila</div>
-                                <div className='multi-data'>Leila</div>
+                                {
+                                    apprentices.map(element => {
+                                    return (
+                                        <div className='multi-data'>{element}</div>
+                                    )                                    
+                                })
+                                }
                             </div>
                         </div>
                         <div className='dt-two char-formerAffiliations'>
                             <div className='char-detail-header'>Former affiliations:</div>
                                 <div className='char-multi-data'>
-                                    none
+                                {                                    
+                                    formerAffiliations.map(element => {
+                                        return (
+                                            <div className='multi-data'>{element}</div>
+                                        )                                    
+                                    })
+                                }
                                 </div>
                         </div>
                     </div>
@@ -111,7 +125,7 @@ const CharModal = ({show, hide, image, height, mass, gender, homeworld, wiki, bo
                             <button className='modal-btn' onClick={hide}>close</button>
                         </div>
                         <div className='wiki-button'>
-                            <button className='modal-btn'>More</button>
+                            <button className='modal-btn'><a href={wiki}>More</a></button>
                         </div>
                     </div>
                 </div>

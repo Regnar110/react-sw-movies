@@ -15,24 +15,29 @@ class Characters extends Component {
 
     getData = async () =>{ // funkcja ściągająca dane z API (swapi) i umieszczająca je w stanie charactersArr
         let chars = this.state.charactersArr;
-        let masters = []
+
         try{
             for(let i=1;i<=87;i++) {
                 if(i !== 17) { // pozycja 17 w api nie istnieje dlatego jest tutaj if aby pominąć tą pozycję
                     let response =  await fetch('https://akabab.github.io/starwars-api/api/id/'+i+'.json')
-                    let data = await response.json();
+                    let data = await response.json();    
                     if('masters' in data) {
-                        chars.push(data);
-                    } else {
-                        console.log('pushuje')
-                        data.push(masters)
-                    }
+                        data.masters = [data.masters].flat(1); //metoda flat usuwa dodatkowe zagnieżdżenie bo niektóre klucze posiadające tablicę otrzymywały dodatkowy nesting.
+                        data.apprentices = [data.apprentices].flat(1)
+                        chars.push(data)
+                    } else if(!('masters' in data)) {
+                        data.masters = ['----']
+                        data.apprentices = ['----']
+                        chars.push(data)
+                    }              
                 }
             }
         } catch {
             throw new Error('characters fetching error')
         } finally {
-            this.setState({charactersArr: chars})
+            this.setState({charactersArr: chars}, () => {
+                console.log(this.state.charactersArr)
+            })
         }
     }
 
@@ -50,7 +55,7 @@ class Characters extends Component {
     }
 
     render() {
-        const {charactersArr, characterSearchValue, modal} = this.state;
+        const {charactersArr, characterSearchValue} = this.state;
         const filteredCharacters = charactersArr.filter(character =>{
             return character.name.toLowerCase().includes(characterSearchValue.toLowerCase());
         })
