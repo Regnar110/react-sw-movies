@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './movies.scss';
 import MovieBox from './MovieBox'
 import Loading from './Loading'
 
@@ -52,7 +51,7 @@ class Movies extends Component {
         (
             <div className='section-container'>
                 <h1 className='section-header'> Movies </h1>
-                <div className='movies-wrapper'>
+                <div className='section-wrapper'>
                 {
                     filteredMovies.map((element, i) => {
                         return(

@@ -12,10 +12,18 @@ class Char extends Component {
     }
 
     showModal = () => {
+        const navBar = document.querySelector('.nav-container')
+        const navMenu = document.querySelector('.nav-menu')
+        navBar.style.zIndex = '0'
+        navMenu.style.zIndex = '0'
         this.setState({modal: true})
     }
 
     hideModal = () => {
+        const navBar = document.querySelector('.nav-container')
+        const navMenu = document.querySelector('.nav-menu')
+        navBar.style.zIndex = '1'
+        navMenu.style.zIndex = '2'
         this.setState({modal: false})
     }
 

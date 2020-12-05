@@ -1,5 +1,4 @@
 import { Component, Fragment } from 'react';
-import './characters.scss';
 import Char from './Char';
 import Loading from './Loading'
 import CharModal from './CharModal'
@@ -35,9 +34,7 @@ class Characters extends Component {
         } catch {
             throw new Error('characters fetching error')
         } finally {
-            this.setState({charactersArr: chars}, () => {
-                console.log(this.state.charactersArr)
-            })
+            this.setState({charactersArr: chars})
         }
     }
 
@@ -65,7 +62,7 @@ class Characters extends Component {
             (
             <div className='section-container'>
                 <h1 className='section-header'> Characters </h1>
-                <div className='movies-wrapper'>
+                <div className='section-wrapper'>
                     {
                         filteredCharacters.map( ({id, ...otherProps}) => {
                             return(

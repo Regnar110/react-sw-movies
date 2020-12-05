@@ -5,13 +5,13 @@
     display: none;
     overflow: scroll;
     position: fixed;
-    z-index: 10;
     top: 0;
     background-color: rgba(0, 0, 0, 0.76);
     height: 100vh;
     width: 100%;
     color: white;
     font-family: 'Goldman', cursive;
+    z-index: 4;
 
     .char-modal-content {
         z-index: 10;
@@ -23,7 +23,6 @@
             width: 40%;
             border-radius: 10px;
             height: 98vh;
-            z-index: 4;
         }
 
         .char-details {
