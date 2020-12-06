@@ -93,21 +93,21 @@ export const speciesImages = [
         img: 'https://static.wikia.nocookie.net/starwars/images/8/83/Dexter_Jettster_%28Besalisk%29_FF44.jpg' // besalisk ..
     },
     {
-        img: 'https://static.wikia.nocookie.net/starwars/images/4/40/Kaminoan_FO_Arden_Beckwith.png' //kaminoan ..
+        img: 'https://static.wikia.nocookie.net/starwars/images/9/9c/TaunWe.jpg' //kaminoan ..
     },
     {
-        img: 'https://static.wikia.nocookie.net/starwars/images/d/d2/Wat_Tambor_SWE.png' // skakoan
+        img: 'https://static.wikia.nocookie.net/starwars/images/d/d2/Wat_Tambor_SWE.png' // skakoan ..
     },
     {
-        img: 'https://starwars.fandom.com/wiki/Muun/Legends?file=San_hill.jpg' // muun
+        img: 'https://static.wikia.nocookie.net/starwars/images/4/4f/San_hill.jpg' // muun ..
     },
     {
-        img: 'https://starwars.fandom.com/wiki/Togruta?file=ShaakTi-TCWs3BR1.png' // togruta
+        img: 'http://www.ossus.pl/images/d/d5/Ahsoka_real.jpg' // togruta ..
     },
     {
-        img: 'https://starwars.fandom.com/wiki/Kaleesh?file=Kaleesh-Alien_Archive.jpg' // kaleesh
+        img: 'https://static.wikia.nocookie.net/starwars/images/d/d0/Kaleesh-Alien_Archive.jpg' // kaleesh ..
     },
     {
-        img: 'https://starwars.fandom.com/wiki/Pau%27an?file=Pau%2527an.jpg' // pauan
+        img: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3679b6d7-c6cb-40ff-8d10-baafe781c9f7/d9jc4dt-849027f0-316b-42c6-a6bd-3bde27a48fd5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMzY3OWI2ZDctYzZjYi00MGZmLThkMTAtYmFhZmU3ODFjOWY3XC9kOWpjNGR0LTg0OTAyN2YwLTMxNmItNDJjNi1hNmJkLTNiZGUyN2E0OGZkNS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.GZb-bR_kI2CtUBfvK_20Jbd6jZ-Fy82PXw6f1hfKy54' // pauan
     }
 ]
