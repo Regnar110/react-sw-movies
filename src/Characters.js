@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
 import Char from './Char';
 import Loading from './Loading'
 import CharModal from './CharModal'
@@ -67,7 +67,7 @@ class Characters extends Component {
                         filteredCharacters.map( ({id, ...otherProps}) => {
                             return(
                                 <Char key={id} {...otherProps}>
-                                    <CharModal />
+                                    <CharModal key={id} />
                                 </Char>
                             )
                         })

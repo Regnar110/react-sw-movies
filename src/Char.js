@@ -42,14 +42,14 @@ class Char extends Component {
                 <div className='char-img'>
                     <div className='details-pin'>
                         <div className= 'pin-button' onClick={this.showModal}>Details</div>
-                        <div className='pin-mark'><img src={chardetailsimg}/></div>
+                        <div className='pin-mark'><img src={chardetailsimg} alt='character'/></div>
                     </div>
                 </div>
                 <div className='char-name'>
                     {name}
                 </div> 
             </div>
-            <CharModal key={id} show={modal} hide={this.hideModal} key={id} height={height} mass={mass} gender={gender} homeworld={homeworld} wiki={wiki} image={image} born={born} bornLocation={bornLocation} died={died} diedLocation={diedLocation} species={species} hairColor={hairColor} eyeColor={eyeColor} skinColor={skinColor} cybernetics={cybernetics} affiliations={affiliations} masters={masters} apprentices={apprentices} formerAffiliations={formerAffiliations}/>
+            <CharModal key={id} show={modal} hide={this.hideModal} height={height} mass={mass} gender={gender} homeworld={homeworld} wiki={wiki} image={image} born={born} bornLocation={bornLocation} died={died} diedLocation={diedLocation} species={species} hairColor={hairColor} eyeColor={eyeColor} skinColor={skinColor} cybernetics={cybernetics} affiliations={affiliations} masters={masters} apprentices={apprentices} formerAffiliations={formerAffiliations}/>
             </Fragment>
         )
     }

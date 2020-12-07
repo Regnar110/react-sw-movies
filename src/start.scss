@@ -16,6 +16,7 @@
         justify-content: center;
         text-align: justify;
         padding: 30px;
+        font-size: calc(25px + (30 - 25) * ((100vw - 280px) / (1600 - 280)));
     }
 
     .home-image {

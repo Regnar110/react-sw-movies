@@ -5,6 +5,7 @@
     height: 500px;
     font-family: 'Goldman', cursive;
     overflow: hidden;
+    border: 2px solid black;
     border-radius: 10px;
     background-color: black;
     margin: 20px;
@@ -47,6 +48,7 @@
     }
 
     .char-name {
+        font-size: calc(20px + (25 - 20) * ((100vw - 280px) / (1600 - 280)));
         height: 20%;
         background-color: rgba(0, 0, 0, 0.74);
         color: white;

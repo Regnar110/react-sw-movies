@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MovieBox from './MovieBox'
 import Loading from './Loading'
+import MovieModal from './MovieModal'
+import {moviesImages} from './moviesImages'
 
 class Movies extends Component {
     constructor(props) {
@@ -29,7 +31,13 @@ class Movies extends Component {
         } catch {
             throw new Error('fetching films error')
         } finally {
-            this.setState({moviesArr: films})
+
+            const filmsWithImages = films.map((element, i) => {
+                element.image = moviesImages[i].img;
+                return element
+            })
+
+            this.setState({moviesArr: filmsWithImages})
         }
     }
 
@@ -53,9 +61,11 @@ class Movies extends Component {
                 <h1 className='section-header'> Movies </h1>
                 <div className='section-wrapper'>
                 {
-                    filteredMovies.map((element, i) => {
+                    filteredMovies.map(({...props}, i) => {
                         return(
-                            <MovieBox key={i} title={element.title} func={this.boxOnclick} />
+                                <MovieBox key={i} {...props} func={this.boxOnclick}>
+                                    <MovieModal key={i}/>
+                                </MovieBox>
                         )
                     })
                 }

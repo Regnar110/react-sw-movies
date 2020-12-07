@@ -29,9 +29,7 @@ class Species extends Component {
                return element
             })
 
-            this.setState({speciesArr: speciesArrWithImages}, () => {
-                console.log(this.state.speciesArr)
-            })
+            this.setState({speciesArr: speciesArrWithImages})
         }
     }
 

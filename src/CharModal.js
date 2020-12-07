@@ -75,9 +75,9 @@ const CharModal = ({show, hide, image, height, mass, gender, homeworld, wiki, bo
                             <div className='char-detail-header'>Affiliations:</div>  
                             <div className='char-multi-data'>
                                 {
-                                    affiliations.map(element => {
+                                    affiliations.map((element, i) => {
                                     return (
-                                        <div className='multi-data'>{element}</div>
+                                        <div className='multi-data' key={i}>{element}</div>
                                     )                                    
                                 })
                                 }
@@ -87,9 +87,9 @@ const CharModal = ({show, hide, image, height, mass, gender, homeworld, wiki, bo
                             <div className='char-detail-header'>Masters:</div>
                             <div className='char-multi-data'>
                                 {   
-                                    masters.map(element => {
+                                    masters.map((element, i) => {
                                     return (
-                                        <div className='multi-data'>{element}</div>
+                                        <div className='multi-data' key={i}>{element}</div>
                                     )                                    
                                 })
                                 }
@@ -99,9 +99,9 @@ const CharModal = ({show, hide, image, height, mass, gender, homeworld, wiki, bo
                             <div className='char-detail-header'>Apprentices:</div>
                             <div className='char-multi-data'>
                                 {
-                                    apprentices.map(element => {
+                                    apprentices.map((element, i) => {
                                     return (
-                                        <div className='multi-data'>{element}</div>
+                                        <div className='multi-data' key={i}>{element}</div>
                                     )                                    
                                 })
                                 }
@@ -111,9 +111,9 @@ const CharModal = ({show, hide, image, height, mass, gender, homeworld, wiki, bo
                             <div className='char-detail-header'>Former affiliations:</div>
                                 <div className='char-multi-data'>
                                 {                                    
-                                    formerAffiliations.map(element => {
+                                    formerAffiliations.map((element, i) => {
                                         return (
-                                            <div className='multi-data'>{element}</div>
+                                            <div className='multi-data' key={i}>{element}</div>
                                         )                                    
                                     })
                                 }

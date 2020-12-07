@@ -17,7 +17,7 @@
         z-index: 0;
 
         .section-header {
-            font-size: 60px;
+            font-size: calc(28px + (60 - 30) * ((100vw - 280px) / (1600 - 280)));
             text-align: center;
             letter-spacing: 7px;
             -webkit-text-stroke-width: 2px;

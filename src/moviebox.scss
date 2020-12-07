@@ -60,7 +60,7 @@
         height: 20%;
         color: white;
         font-family: 'Goldman', cursive;
-        font-size: 22px;
+        font-size: calc(20px + (22 - 20) * ((100vw - 280px) / (1600 - 280)));
         letter-spacing: 3px;
         display: flex;
         flex-direction: column;

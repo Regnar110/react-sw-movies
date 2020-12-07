@@ -19,7 +19,6 @@ const BoxNavbar = ({menuFunction, placeholder, placeholderFunction, searchConten
                 <div className='menu-item' id='movies' onClick={placeholderFunction}>Movies</div>
                 <div className='menu-item' id='characters' onClick={placeholderFunction}>Characters</div>
                 <div className='menu-item' id='species' onClick={placeholderFunction}>Species</div>
-                <div className='menu-item' id='actors' onClick={placeholderFunction}>Actors</div>
             </nav>
     </Fragment>
     )

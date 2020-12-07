@@ -80,7 +80,7 @@
         font-family: 'Goldman', cursive;
         font-weight: 800;
         letter-spacing: 3px;
-        font-size: 50px;
+        font-size: calc(30px + (50 - 30) * ((100vw - 280px) / (1600 - 280)));
         color: rgb(0, 0, 0);
     }
 }

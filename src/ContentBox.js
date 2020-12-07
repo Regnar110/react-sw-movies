@@ -5,7 +5,6 @@ import Start from './Start';
 import Movies from './Movies'
 import Characters from './Characters'
 import Species from './Species'
-import Actors from './Actors'
 
 class ContentBox extends Component {
     constructor(props) {
@@ -35,10 +34,6 @@ class ContentBox extends Component {
         } else if(userSitePos === 'species') {
             return(
                 <Species searchField={searchFieldContent}/>
-            )
-        } else if(userSitePos === 'actors') {
-            return(
-                <Actors searchField={searchFieldContent}/>
             )
         }
     }
