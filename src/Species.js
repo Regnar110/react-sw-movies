@@ -20,8 +20,6 @@ class Species extends Component {
                 const jsonData = await response.json();
                 species.push(jsonData.results);
             }
-        } catch {
-            throw new Error('species fetching error')
         } finally { 
             const newArr = species.flat(1); 
             const speciesArrWithImages = newArr.map((element, i) => {
