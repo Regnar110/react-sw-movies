@@ -16,7 +16,7 @@ class Species extends Component {
         let species = []
         try {
             for(let i = 1 ; i<=4; i++){
-                const response = await fetch('http://swapi.dev/api/species/?page='+i)
+                const response = await fetch('https://swapi.dev/api/species/?page='+i)
                 const jsonData = await response.json();
                 species.push(jsonData.results);
             }
