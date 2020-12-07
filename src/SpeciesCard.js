@@ -9,7 +9,7 @@ const SpeciesCard = ({image, name, language, average_height, average_lifespan, c
     (async  () => { 
         if(homeworld !== null) {
             const url = homeworld;
-            const urlHTTPS = url.replace(/^http?\:\/\//i, "https://"); // changing http to https - netlify site does not allow to fetch from http API.
+            const urlHTTPS = url.replace('http://', "https://"); // changing http to https - netlify site does not allow to fetch from http API.
             const resp = await fetch(urlHTTPS)
             const data = await resp.json();
             setHome(home = data.name)
