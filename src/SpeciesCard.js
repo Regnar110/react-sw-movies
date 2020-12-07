@@ -5,7 +5,7 @@ const SpeciesCard = ({image, name, language, average_height, average_lifespan, c
 
     let [home, setHome] = useState([]);
 
-    (async  () => { // samowywołująca się funkcja, która z wartości parametru homeworld ściąga wartość name i przekazuje ją do stanu home
+    (async  () => { 
         const resp = await fetch(homeworld)
         const data = await resp.json();
         setHome(home = data.name)

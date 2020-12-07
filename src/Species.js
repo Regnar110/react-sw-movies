@@ -23,8 +23,8 @@ class Species extends Component {
         } catch {
             throw new Error('species fetching error')
         } finally { 
-            const newArr = species.flat(1); // nowa spłaszczona tablica
-            const speciesArrWithImages = newArr.map((element, i) => { // dodawanie zdjęć do sprowadzonych obiektów ras. Zdjęcia dodane z obiektu speciesImages. Utworzona tablica jest tablcą gotową do wdrożenia.
+            const newArr = species.flat(1); 
+            const speciesArrWithImages = newArr.map((element, i) => {
                element.image = speciesImages[i].img;
                return element
             })
@@ -33,7 +33,7 @@ class Species extends Component {
         }
     }
 
-    searchChange = () => { // funkcja dodająca event listener z poziomu komponentu, który nie jeste rodzicem elementu do którego dodawany jest event listener. Pozwala to na dynamiczne uaktualnianie stanu searchValue na podstawie tego co jest wprowadzone w polu input.
+    searchChange = () => { 
         const searchBox = document.querySelector('#boxSearch');
         searchBox.addEventListener('input', e => {
             this.setState({speciesSearchValue: e.target.value})

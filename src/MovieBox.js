@@ -32,7 +32,7 @@ const MovieBox = ({title, opening_crawl, director, producer, release_date, image
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
             }}>
-            <div className='movie-image'> {/*kontener spychający footer na dół i zawierający pin*/}
+            <div className='movie-image'>
                 <div className='movie-details-pin'>
                     <div className='pin-button' onClick={showModal}>See more</div>
                     <div className='pin-mark'><img src={movieboxhover} alt='click-icon'/></div>

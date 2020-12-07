@@ -96,7 +96,7 @@
             -moz-animation: intro 2s ease-out;
             -ms-animation: intro 2s ease-out;
             -o-animation: intro 2s ease-out;
-            animation: intro 2s ease-out; // to nalezy dodać w js po kliknieciu buttona play crawl text
+            animation: intro 2s ease-out; 
           }
           
           .star-wars-intro .main-content{
@@ -151,38 +151,11 @@
           .star-wars-intro .title-content {
             position: absolute;
             top: 100%;
-            animation: scroll 120s linear 4s forwards; // to nalezy dodać w js po kliknieciu buttona play crawl text
+            animation: scroll 120s linear 4s forwards; 
           }
           
           .star-wars-intro .title-content > .content-header {
             text-align: center;
-          }
-          
-          /* Main Image Styles */
-          
-          .star-wars-intro .main-logo {
-            position: absolute;
-            width: 2.6em;
-            left: 50%;
-            top: 20vh;
-            font-size: 10em;
-            text-align: center;
-            margin-left: -1.3em;
-            line-height: 0.8em;
-            letter-spacing: -0.05em;
-            color: #000;
-            text-shadow: -2px -2px 0 #EBD71C, 2px -2px 0 #EBD71C, -2px 2px 0 #EBD71C, 2px 2px 0 #EBD71C;
-            opacity: 0;
-            z-index: 1;
-            -webkit-animation: logo 5s ease-out 2.5s;
-            -moz-animation: logo 5s ease-out 2.5s;
-            -ms-animation: logo 5s ease-out 2.5s;
-            -o-animation: logo 5s ease-out 2.5s;
-            animation: logo 5s ease-out 2.5s;
-          }
-          
-          .star-wars-intro .main-logo > img {
-            max-width: 100%;
           }
           
           @-webkit-keyframes intro {

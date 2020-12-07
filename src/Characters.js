@@ -12,16 +12,16 @@ class Characters extends Component {
         }
     }
 
-    getData = async () =>{ // funkcja ściągająca dane z API (swapi) i umieszczająca je w stanie charactersArr
+    getData = async () =>{ 
         let chars = this.state.charactersArr;
 
         try{
             for(let i=1;i<=87;i++) {
-                if(i !== 17) { // pozycja 17 w api nie istnieje dlatego jest tutaj if aby pominąć tą pozycję
+                if(i !== 17) { 
                     let response =  await fetch('https://akabab.github.io/starwars-api/api/id/'+i+'.json')
                     let data = await response.json();    
                     if('masters' in data) {
-                        data.masters = [data.masters].flat(1); //metoda flat usuwa dodatkowe zagnieżdżenie bo niektóre klucze posiadające tablicę otrzymywały dodatkowy nesting.
+                        data.masters = [data.masters].flat(1); 
                         data.apprentices = [data.apprentices].flat(1)
                         chars.push(data)
                     } else if(!('masters' in data)) {
@@ -39,7 +39,7 @@ class Characters extends Component {
     }
 
 
-    searchChange = () => { // funkcja dodająca event listener z poziomu komponentu, który nie jeste rodzicem elementu do którego dodawany jest event listener. Pozwala to na dynamiczne uaktualnianie stanu searchValue na podstawie tego co jest wprowadzone w polu input.
+    searchChange = () => { 
         const searchBox = document.querySelector('#boxSearch');
         searchBox.addEventListener('input', e => {
             this.setState({characterSearchValue: e.target.value})

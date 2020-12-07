@@ -30,9 +30,6 @@ const MovieModal = ({show, hideModal, title, crawl, director, producer, relase})
                     <p className="intro-text">
                         A long time ago in galaxy far, far away....
                     </p>
-                    <h2 className="main-logo">
-                        <img src="img/star-wars-intro.png" />
-                    </h2>
                     <div className="main-content">
 
                         <div className="title-content">

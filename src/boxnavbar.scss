@@ -17,7 +17,7 @@ $w: 300px;
   position: fixed;
   background-color: rgba(0, 0, 0, .8);
   display: flex;
-  z-index: 1; // było na 1 - zmienione w trakcie pracy nad char-modalem
+  z-index: 1;
 }
 
 .burger {
@@ -153,7 +153,7 @@ $w: 300px;
     align-items: center;
     left: 0px;
     height: 60px;
-    width: 0px; // zmieniony przy pierwsyzm kliknięciu na jakiś item w menu
+    width: 0px;
     padding-left: 35px;
     padding-right:10px;
     
@@ -184,7 +184,7 @@ $w: 300px;
 }
 
 .nav-menu {
-    z-index: 2; // żeby menu było zawsze nad resztą zawartości  - zmienione na 0 z 2 na czas pracy nad char modal
+    z-index: 2;
     position: fixed;
     left: -350px;
     top:215px;

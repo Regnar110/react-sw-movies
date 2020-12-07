@@ -12,12 +12,12 @@ class ContentBox extends Component {
         this.state = {
             menuOn: false,
             searchfieldOn: false,
-            searchFieldPlaceholder: '', // zsłuży do zmiasy placeholdera w polu wyszukiwania zależnie od tego w jakiej sekcji aplikacji z najduje się użytkownik
-            userSitePos: 'start', //wskazuje na pozycje użytkownika w contentBoxe. Czyli na to czy przegląda filmy, postacie lub coś innego
+            searchFieldPlaceholder: '', 
+            userSitePos: 'start', 
         }
     }
 
-    deploySection = () => { // funkcja która na podstawie wyboru z menu( który zmienia stan userSitePos na nazwę sekcji, w której znajduje się użytkownik) wyświetla zawartość zwracając komponent odpowiadający wyborom użytkownika. FUNKCJA WYWOŁYWANA PRZEZ searchFIELD FUNCTION
+    deploySection = () => { 
         let {userSitePos, searchFieldContent} = this.state
         if(userSitePos === 'start'){
             return(
@@ -38,7 +38,7 @@ class ContentBox extends Component {
         }
     }
 
-    searchFieldFunctions = (event) => { // zmieniane są 3 stany czyli searchFieldPlaceholder,  userSitePos i searchFieldOn. Ten ostatni w zalezności od tego jaki element menu jest kliknięty. Nadaje funkcjonalośc do searchFielda i ogólnie menu
+    searchFieldFunctions = (event) => { 
         const searchContainer = document.querySelector('.boxSearch-container');
         this.setState({userSitePos: event.target.id})
         this.setState({searchFieldPlaceholder: 'search for ' + event.target.id})
@@ -81,7 +81,7 @@ class ContentBox extends Component {
         }
     }
 
-    setHeight = () => { // ustawia wysokość content boxa na wysokość pozostałą na stronie pod logiem, dla każdej wysokości ekranu
+    setHeight = () => { 
         const contentBox = document.querySelector('.content-box');
         contentBox.style.height = (window.innerHeight - contentBox.offsetTop - 5)+'px';
     }

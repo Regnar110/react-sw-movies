@@ -11,7 +11,7 @@ class App extends Component {
     }
   }
   
-  deployLogo = () => { // funkcja wywoływana gdy komponent zostanie zamontowany i stan logo deploy zostanie zmieniony na true
+  deployLogo = () => { 
     const {logoDeploy} = this.state;
     const landingLogo = document.querySelector('.landing-logo');
     const underLogo = document.querySelector('.under-logo');
